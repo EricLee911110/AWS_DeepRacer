@@ -1,5 +1,6 @@
 import math
 
+
 def reward_function(params):
     # Example of penalize steering, which helps mitigate zig-zag behaviors
 
@@ -14,6 +15,8 @@ def reward_function(params):
     steering_angle = params['steering_angle']
     x = params['x']
     y = params['y']
+    steps = params['steps']
+    is_left_of_center = params['is_left_of_center']
 
     # Center Line
     marker_1 = 0.12 * track_width
@@ -29,24 +32,40 @@ def reward_function(params):
     else:
         reward = 1e-3  # likely crashed/ close to off track
 
-    # Angle
+    # Stay on right side of track
+    if is_left_of_center == False:
+        reward *= 1.1
+
+    # Right-turn corner of Left-turn Corner
     next_wp = waypoints[closest_waypoints[1]]
     prev_wp = waypoints[closest_waypoints[0]]
 
-    car_next_wp_angle = math.degrees(math.atan2(next_wp[1] - y, next_wp[0] - x))
-    angle_diff = abs(heading - car_next_wp_angle)
+    if closest_waypoints[1] == len(waypoints) -1:
+        n_next_wp = waypoints[1]
+    else:
+        n_next_wp = waypoints[closest_waypoints[1] +1]
 
-    if angle_diff > 180:
-        angle_diff = abs(360 - angle_diff)
+    angle_now = math.degrees(math.atan2(next_wp[1] - prev_wp[1], next_wp[0] - prev_wp[0]))
+    angle_next = math.degrees(math.atan2(n_next_wp[1] - next_wp[1], n_next_wp[0] - next_wp[0]))
 
-    ANGLE_THRESHOLD = 40
+    if angle_next - angle_now > 10:     #Left turn
+        if is_left_of_center == False:
+            reward *= 0.7
+    if angle_next - angle_now < -10:    #Right turn
+        if is_left_of_center == True:
+            reward *= 0.7
 
-    if angle_diff > ANGLE_THRESHOLD:
-        reward *= 0.01
-
-    # All wheels on track
-    if all_wheels_on_track == False:
-        reward *= 0.01
+    # Speeding up by progress
+    if steps % 450 == 0:    # check per 30 seconds
+        if steps == 0:
+            prev_progress = 0
+            prev_progress_diff = 0
+        progress_diff = progress - prev_progress
+        prev_progress = progress
+        
+        if progress_diff > prev_progress_diff:
+            reward *= 1.1
+        prev_progress_diff = progress_diff
 
 
     return float(reward)
