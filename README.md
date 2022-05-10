@@ -204,6 +204,6 @@ Break personal best again!
 ![image](https://user-images.githubusercontent.com/79837982/167607421-71f6d1ce-c606-4bac-9aef-332a494c4887.png)
 
 Didn't go off track. That is the most happiest thing ever :D
-Unfortunately, the speed isn't fast enough. The record final record is 03:10.126
+Unfortunately, the speed isn't fast enough. The record best record is 03:06.399 If I can reach the endline 7 seconds earlier, I will eligible for the Udacity nanodegree sponsorship. 
 Let's just put this aside and join again next month, you will see me come back June, 2022. Stay tuned. :)
 
