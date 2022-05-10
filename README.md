@@ -133,7 +133,7 @@ Less reward for being on the right side of the track 1.1 -> 1.05 Init waypoint s
 ![image](https://user-images.githubusercontent.com/79837982/167358957-49510f05-1124-41d2-a066-7af62a6bb37c.png)
 Video([link](https://user-images.githubusercontent.com/79837982/167359013-f0c3099b-af3c-4faa-8a98-1ff15f326446.mp4))
 
-Still having the same spot that will keep running off track.
+Still have the problem that will keep running off track on the same spot.
 
 ## Twentieth Attempt
 15 mins. Right side rewar 1.05 -> 1.03 Turn left angle 5 -> 18
@@ -187,9 +187,23 @@ Break personal best again!
 
 20 mins. Clone of 26th attempt. Right side reward 1.02 -> 1.01. Left side reward turning left 1.0 -> 1.02
 
+![image](https://user-images.githubusercontent.com/79837982/167562773-3990ed64-d70f-4578-b583-ce878afa7db3.png)
 
 
+## 28th Attempt
+
+20 mins. Clone of 26th attempt. Track_4 *0.6 Track_3 0.1 -> 0.8 marker_1 1.22 -> 1.25
+
+![image](https://user-images.githubusercontent.com/79837982/167575614-23919cf4-eff7-4670-897f-9129893c894b.png)
 
 
+## 29th Attempt
 
+55 mins. Same as 28th, but I think the problem with 28th attempt is that it keeps the memory from the pass. That's why it keeps failing. Last try of this month.
+
+![image](https://user-images.githubusercontent.com/79837982/167607421-71f6d1ce-c606-4bac-9aef-332a494c4887.png)
+
+Didn't go off track. That is the most happiest thing ever :D
+Unfortunately, the speed isn't fast enough. The record final record is 03:10.126
+Let's just put this aside and join again next month, you will see me come back June, 2022. Stay tuned. :)
 
